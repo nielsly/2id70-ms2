@@ -18,4 +18,4 @@ def run():
     RDDafterMap = string_rdd_votes.flatMap(lambda line: line.split(","))
     RDDfilterdate = RDDafterMap.filter(lambda x: x == '01-01-2012')
     q11 = RDDfilterdate.count()
-    return 0
+    return q11
