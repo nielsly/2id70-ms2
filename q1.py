@@ -15,7 +15,7 @@ def run():
     string_rdd_votes = spark_context.textFile("/Votes.csv")
 
     # TODO: Implement Question 1 here.
-    RDDafterMap = rdd1.flatMap(lambda line: line.split(","))
+    RDDafterMap = string_rdd_votes.flatMap(lambda line: line.split(","))
     RDDfilterdate = RDDafterMap.filter(lambda x: x == '01-01-2012')
     q11 = RDDfilterdate.count()
     return 0
