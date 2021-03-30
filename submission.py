@@ -9,7 +9,7 @@ import q4
 if __name__ == '__main__':
     q1.run()
 
-    # q2.run()
+    q2.run()
 
     # q3.run()
 
