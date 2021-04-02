@@ -2,8 +2,7 @@ from pyspark import SparkContext
 
 
 def run():
-    # TODO: Implement Question 2 here.
-    # how the fuck do you import the data from q1?
+    #Implement Question 2 here.
     spark_context = SparkContext.getOrCreate()
     string_rdd_votes = spark_context.textFile("Votes_small.csv")
     a = string_rdd_votes.map(lambda line: line.split(","))
