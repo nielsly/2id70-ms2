@@ -18,4 +18,12 @@ def run():
     RDDafterMap = string_rdd_votes.flatMap(lambda line: line.split(","))
     RDDfilterdate = RDDafterMap.filter(lambda x: x == '01-01-2012')
     q11 = RDDfilterdate.count()
-    return q11
+    print('>> [q12: ' + str(q11) + ']')
+    
+    split = string_rdd_votes.map(lambda line: line.split(","))
+    rdd = split.map(lambda x: x[1:3])
+    rdd2 = rdd.map(lambda k: (tuple(k), 1))
+    rdd3 = rdd2.reduceByKey(lambda a,b: a+b)
+    rdd4 = rdd3.filter(lambda x: x[1] > 9)
+    q12 = rdd4.count()
+    print('>> [q12: ' + str(q12) + ']')
