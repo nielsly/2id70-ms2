@@ -37,6 +37,6 @@ def run():
     dates = dateCounter.reduceByKey(lambda a, b: a + b)
     get_col = lambda a, b: a[b]
     maxDate = dates.map(lambda x: get_col(x, 1)).max()
-    finalMap = dates.filter(lambda y: y[1] == q12)
+    finalMap = dates.filter(lambda y: y[1] == maxDate)
     answer = finalMap.map(lambda x: get_col(x, 0)).collect()
     print(">> [q13: " + answer[0] + "]")
