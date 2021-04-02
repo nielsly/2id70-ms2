@@ -39,4 +39,4 @@ def run():
     maxDate = dates.map(lambda x: get_col(x, 1)).max()
     finalMap = dates.filter(lambda y: y[1] == q12)
     answer = finalMap.map(lambda x: get_col(x, 0)).collect()
-    print(">> [q12: " + answer[0] + "]")
+    print(">> [q13: " + answer[0] + "]")
